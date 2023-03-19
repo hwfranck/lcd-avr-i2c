@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h> // uint8_t
+#include <stddef.h> // size_t
 
 //	D7 D6 D5 D4 BT  E RW RS	:= lcd pins
 //	P7 P6 P5 P4 P3 P2 P1 P0	:= pcf8574 pins
@@ -31,5 +32,5 @@ void lcd_load_pattern(uint8_t index_pattern);
 void lcd_move_cursor(uint8_t line, uint8_t col);
 void lcd_print(char msg[]);
 void lcd_print_nl(void);
-void lcd_save_pattern(char pattern[], uint8_t addr_offset);
+void lcd_save_pattern(char pattern[], size_t size, uint8_t addr_offset);
 void lcd_send(uint8_t data);

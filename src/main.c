@@ -16,10 +16,10 @@ int main (void) {
 
 	char bat_pos_empty[] = {0x1E, 0x02, 0x03, 0x03, 0x03, 0x02, 0x1E, 0x00};
 
-	lcd_save_pattern(bat_neg_full, 0);
-	lcd_save_pattern(bat_mid_empty, 1);
-	lcd_save_pattern(bat_mid_full, 2);
-	lcd_save_pattern(bat_pos_empty, 3);
+	lcd_save_pattern(bat_neg_full, sizeof(bat_neg_full), 0);
+	lcd_save_pattern(bat_mid_empty, sizeof(bat_mid_empty), 1);
+	lcd_save_pattern(bat_mid_full, sizeof(bat_mid_full), 2);
+	lcd_save_pattern(bat_pos_empty, sizeof(bat_pos_empty), 3);
 
 	//	Clear display and reset cursor position
 	lcd_clear();

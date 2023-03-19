@@ -101,9 +101,14 @@ void lcd_print_nl (void) {
 	lcd_move_cursor (1, 0);
 }
 
-void lcd_save_pattern(char pattern[], uint8_t addr_offset) {
+void lcd_save_pattern(char pattern[], size_t size, uint8_t addr_offset) {
 
-	lcd_command_write(0x40+addr_offset*8, 0);
+	if (size / sizeof(char) != 8) {
+		return;
+	}
+
+	// Set cgram address and send cgram data
+	lcd_command_write(0x40 + addr_offset*8, 0);
 
 	for (uint8_t i = 0; i < 7; ++i) {
 
