@@ -1,3 +1,5 @@
+# Based on the WinAVR Makefile Template written by Eric B. Weddington, Jörg Wunsch, et al.
+# https://github.com/embecosm/winavr/blob/master/Mfile/data/makefile_template.winavr
 MCU = atmega2560
 F_CPU = 16000000
 TARGET = lcd_avr_i2c
